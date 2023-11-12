@@ -26,9 +26,9 @@ class VisitController extends Controller
     public function create()
     {
         $patients = Patient::latest()->get();
-        
+
         $physicians = Physician::latest()->get();
-    
+
         return view('visits.create', compact('patients', 'physicians'));
     }
 
@@ -57,7 +57,8 @@ class VisitController extends Controller
      */
     public function edit(Visit $visit)
     {
-        return view('visits.edit', compact('visit'));
+        // dd($visit);
+        return view('visits.edit-old', compact('visit'));
     }
 
     /**
@@ -69,8 +70,8 @@ class VisitController extends Controller
 
         $visit->update($validated);
 
-        return redirect()->route('visits.index')->with('success', 'visitor updated successfully!');
-    
+        return redirect()->route('visits.index')->with('success', 'visit updated successfully!');
+
     }
 
     /**

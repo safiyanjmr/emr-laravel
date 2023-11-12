@@ -32,7 +32,7 @@ class PatientController extends Controller
     public function store(StorePatientRequest $request)
     {
         $validated = $request->validated();
-        
+
         $validated['user_id'] = auth()->id();
 
         Patient::create($validated);
@@ -62,7 +62,7 @@ class PatientController extends Controller
     public function update(UpdatePatientRequest $request, Patient $patient)
     {
         $validated = $request->validated();
-        
+
         $validated['user_id'] = auth()->id();
 
         $patient->update($validated);

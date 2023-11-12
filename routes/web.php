@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\MedicationController;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\PatientController;
@@ -39,5 +40,9 @@ Route::delete('/patients/{patient}', [PatientController::class, 'destroy'])->nam
 Route::resource('/physicians', PhysicianController::class);
 
 Route::resource('/visits', VisitController::class);
+
+Route::resource('/medications', MedicationController::class);
+
+Route::resource('/lab-results', \App\Http\Controllers\LabResultController::class);
 
 require __DIR__.'/auth.php';

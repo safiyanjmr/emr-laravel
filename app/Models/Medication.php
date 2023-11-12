@@ -4,20 +4,17 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-class Physician extends Model
+class Medication extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['first_name', 'last_name', 'contact', 'specialization'];
+    protected $fillable = ['user_id','medication_name', 'dosage', 'instructions', 'patient_id', 'physician_id'];
 
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);
-
     }
 
-    public function getFullNameAttribute() {
-        return $this->first_name . ' ' . $this->last_name;
-    }
 }

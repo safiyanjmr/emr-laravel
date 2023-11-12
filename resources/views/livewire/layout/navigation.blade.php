@@ -44,6 +44,14 @@ new class extends Component
                     <x-nav-link :href="route('visits.index')" :active="request()->routeIs('visits.index')" wire:navigate>
                         {{ __('Visits') }}
                     </x-nav-link>
+
+                    <x-nav-link :href="route('medications.index')" :active="request()->routeIs('medications.index')" wire:navigate>
+                        {{ __('Medications') }}
+                    </x-nav-link>
+
+                    <x-nav-link :href="route('lab-results.index')" :active="request()->routeIs('lab-results.index')" wire:navigate>
+                        {{ __('Lab Results') }}
+                    </x-nav-link>
                 </div>
             </div>
 
